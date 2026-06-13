@@ -2,7 +2,7 @@
 
 ## 1. 项目简介
 
-本项目实现了 CRYPT 算子的手写版本，用于完成数据的加密、解密和完整性校验。当前版本只包含两个算法目录：
+本项目实现了 CRYPT 算子的版本，用于完成数据的加密、解密和完整性校验。当前版本只包含两个算法目录：
 
 ```text
 crypt/
@@ -166,7 +166,7 @@ make -j$(nproc)
 
 ## 5. 优化方案说明
 
-本次手写版本只考虑两个优化方向：in-place 和 ctx reuse。
+本次版本只考虑两个优化方向：in-place 和 ctx reuse。
 
 ### 5.1 in-place 原地加解密
 
@@ -186,7 +186,7 @@ working_data 明文 -> working_data 密文 -> working_data 明文
 
 ### 5.2 ctx reuse
 
-在本手写 AES-256-GCM 版本中，ctx reuse 指复用 AES key expansion 后的 round key，而不是复用第三方库上下文。
+在本 AES-256-GCM 版本中，ctx reuse 指复用 AES key expansion 后的 round key，而不是复用第三方库上下文。
 
 普通 AES 版本每次会执行 key expansion。ctx reuse 版本在 key 不变的情况下复用扩展后的轮密钥，减少重复初始化开销。
 
@@ -253,9 +253,9 @@ verify=OK
 
 结论：
 
-- 在本次手写实现中，ChaCha20-Poly1305 明显快于 AES-256-GCM。
+- 在本次实现中，ChaCha20-Poly1305 明显快于 AES-256-GCM。
 - 主要原因是 ChaCha20 核心为加法、异或、循环移位，适合普通软件实现。
-- 当前 AES-256-GCM 包含手写 AES 多轮变换和 GHASH 计算，其中 GHASH 使用通用 GF(2^128) 乘法实现，因此开销较大。
+- 当前 AES-256-GCM 包含 AES 多轮变换和 GHASH 计算，其中 GHASH 使用通用 GF(2^128) 乘法实现，因此开销较大。
 
 ### 8.2 ChaCha20-Poly1305 in-place
 
@@ -273,7 +273,7 @@ verify=OK
 - ChaCha20-Poly1305 的 in-place 效果不稳定。
 - 1 KB 和 1 MB 场景差异很小。
 - 64 KB 场景下 in-place 平均耗时变大，可能受到内存访问模式和系统抖动影响。
-- 因此，当前手写 ChaCha20-Poly1305 不建议把 in-place 作为主要优化结论。
+- 因此，当前 ChaCha20-Poly1305 不建议把 in-place 作为主要优化结论。
 
 ### 8.3 AES-256-GCM in-place
 
@@ -291,7 +291,7 @@ verify=OK
 - AES-256-GCM 的 in-place 效果也不稳定。
 - 1 KB 加密有一定改善，但 1 KB 解密和 64 KB 场景变慢。
 - 1 MB 场景差异接近 0，可以认为没有明显收益。
-- 当前手写 AES-GCM 的主要瓶颈更可能在 AES 轮函数和 GHASH，而不是输入输出缓冲区复制。
+- 当前 AES-GCM 的主要瓶颈更可能在 AES 轮函数和 GHASH，而不是输入输出缓冲区复制。
 
 ### 8.4 AES-256-GCM in-place + ctx reuse
 
@@ -309,15 +309,15 @@ verify=OK
 - `AES in-place + ctx reuse` 在 1 KB 场景有小幅改善。
 - 64 KB 和 1 MB 场景没有收益，甚至略慢。
 - 说明在大数据场景下，重复 key expansion 不是主要瓶颈。
-- 当前手写 AES-GCM 的主要耗时仍然来自 AES block 处理和 GHASH。
+- 当前 AES-GCM 的主要耗时仍然来自 AES block 处理和 GHASH。
 
 ## 9. 总体结论
 
 1. ChaCha20-Poly1305 和 AES-256-GCM 均完成了加密、解密和 tag 校验，输出中 `verify=OK` 表示功能自测通过。
-2. 在本次手写实现中，ChaCha20-Poly1305 明显快于 AES-256-GCM。
+2. 在本次实现中，ChaCha20-Poly1305 明显快于 AES-256-GCM。
 3. in-place 对两个算法的收益都不稳定，不适合作为当前版本的主要优化结论。
 4. AES 的 ctx reuse 当前只在 `in-place + ctx reuse` 组合中测试；结果显示小数据有一定改善，大数据无明显收益。
-5. 当前 AES-256-GCM 的性能瓶颈主要来自手写 AES 轮函数和 GHASH 计算。
+5. 当前 AES-256-GCM 的性能瓶颈主要来自 AES 轮函数和 GHASH 计算。
 6. 如果后续继续优化 AES-256-GCM，应优先考虑优化 GHASH 和 AES block 实现，而不是只调整缓冲区模式。
 
 ## 10. 后续可改进方向
