@@ -1,0 +1,1 @@
+/usr/bin/c++ -O2 -DNDEBUG CMakeFiles/chacha20_encrypt.dir/chacha20/chacha20_poly1305.cpp.o CMakeFiles/chacha20_encrypt.dir/chacha20/chacha20_interface.cpp.o CMakeFiles/chacha20_encrypt.dir/chacha20/chacha20_main.cpp.o -o ../bin/chacha20_encrypt 

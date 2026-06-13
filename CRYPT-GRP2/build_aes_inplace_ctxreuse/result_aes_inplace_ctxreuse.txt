@@ -1,0 +1,28 @@
+CRYPT AES-256-GCM profiling start
+horizon means input data length in bytes
+
+CRYPT,AES-256-GCM,encrypt,io_mode=inplace,horizon=64,samples=30,avg_ns=147383,min_ns=147000,max_ns=151896,avg_ms=0.147383,min_ms=0.147000,max_ms=0.151896
+CRYPT,AES-256-GCM,decrypt,io_mode=inplace,horizon=64,samples=30,avg_ns=148077,min_ns=146896,max_ns=170021,avg_ms=0.148077,min_ms=0.146896,max_ms=0.170021,verify=OK
+
+CRYPT,AES-256-GCM,encrypt,io_mode=inplace,horizon=256,samples=30,avg_ns=458122,min_ns=454916,max_ns=506584,avg_ms=0.458122,min_ms=0.454916,max_ms=0.506584
+CRYPT,AES-256-GCM,decrypt,io_mode=inplace,horizon=256,samples=30,avg_ns=457195,min_ns=455083,max_ns=473125,avg_ms=0.457195,min_ms=0.455083,max_ms=0.473125,verify=OK
+
+CRYPT,AES-256-GCM,encrypt,io_mode=inplace,horizon=1024,samples=30,avg_ns=1862530,min_ns=1683333,max_ns=2484459,avg_ms=1.862531,min_ms=1.683333,max_ms=2.484459
+CRYPT,AES-256-GCM,decrypt,io_mode=inplace,horizon=1024,samples=30,avg_ns=1835192,min_ns=1683646,max_ns=2443896,avg_ms=1.835192,min_ms=1.683646,max_ms=2.443896,verify=OK
+
+CRYPT,AES-256-GCM,encrypt,io_mode=inplace,horizon=4096,samples=30,avg_ns=7575423,min_ns=6605812,max_ns=8453708,avg_ms=7.575424,min_ms=6.605812,max_ms=8.453708
+CRYPT,AES-256-GCM,decrypt,io_mode=inplace,horizon=4096,samples=30,avg_ns=7681238,min_ns=6608896,max_ns=8481396,avg_ms=7.681239,min_ms=6.608896,max_ms=8.481396,verify=OK
+
+CRYPT,AES-256-GCM,encrypt,io_mode=inplace,horizon=16384,samples=30,avg_ns=28344115,min_ns=26267208,max_ns=32637500,avg_ms=28.344115,min_ms=26.267208,max_ms=32.637500
+CRYPT,AES-256-GCM,decrypt,io_mode=inplace,horizon=16384,samples=30,avg_ns=28494639,min_ns=26260104,max_ns=33558667,avg_ms=28.494639,min_ms=26.260104,max_ms=33.558667,verify=OK
+
+CRYPT,AES-256-GCM,encrypt,io_mode=inplace,horizon=65536,samples=30,avg_ns=116008581,min_ns=105001229,max_ns=129495000,avg_ms=116.008582,min_ms=105.001229,max_ms=129.495000
+CRYPT,AES-256-GCM,decrypt,io_mode=inplace,horizon=65536,samples=30,avg_ns=115751029,min_ns=104997104,max_ns=127356625,avg_ms=115.751030,min_ms=104.997104,max_ms=127.356625,verify=OK
+
+CRYPT,AES-256-GCM,encrypt,io_mode=inplace,horizon=262144,samples=30,avg_ns=425629993,min_ns=419931978,max_ns=453901000,avg_ms=425.629993,min_ms=419.931978,max_ms=453.901000
+CRYPT,AES-256-GCM,decrypt,io_mode=inplace,horizon=262144,samples=30,avg_ns=427533401,min_ns=419907791,max_ns=475467312,avg_ms=427.533402,min_ms=419.907791,max_ms=475.467312,verify=OK
+
+CRYPT,AES-256-GCM,encrypt,io_mode=inplace,horizon=1048576,samples=30,avg_ns=1684171420,min_ns=1682173644,max_ns=1690143936,avg_ms=1684.171421,min_ms=1682.173644,max_ms=1690.143936
+CRYPT,AES-256-GCM,decrypt,io_mode=inplace,horizon=1048576,samples=30,avg_ns=1684087802,min_ns=1681916977,max_ns=1689312749,avg_ms=1684.087803,min_ms=1681.916977,max_ms=1689.312749,verify=OK
+
+CRYPT AES-256-GCM profiling finished
