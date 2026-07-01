@@ -1,0 +1,28 @@
+CRYPT ChaCha20-Poly1305 profiling start
+horizon means input data length in bytes
+
+CRYPT,ChaCha20-Poly1305,encrypt,io_mode=outofplace,horizon=64,samples=30,avg_ns=2061,min_ns=2041,max_ns=2250,avg_ms=0.002062,min_ms=0.002041,max_ms=0.002250
+CRYPT,ChaCha20-Poly1305,decrypt,io_mode=outofplace,horizon=64,samples=30,avg_ns=2084,min_ns=2062,max_ns=2250,avg_ms=0.002084,min_ms=0.002062,max_ms=0.002250,verify=OK
+
+CRYPT,ChaCha20-Poly1305,encrypt,io_mode=outofplace,horizon=256,samples=30,avg_ns=5868,min_ns=5104,max_ns=26667,avg_ms=0.005869,min_ms=0.005104,max_ms=0.026667
+CRYPT,ChaCha20-Poly1305,decrypt,io_mode=outofplace,horizon=256,samples=30,avg_ns=5273,min_ns=5125,max_ns=8062,avg_ms=0.005274,min_ms=0.005125,max_ms=0.008062,verify=OK
+
+CRYPT,ChaCha20-Poly1305,encrypt,io_mode=outofplace,horizon=1024,samples=30,avg_ns=17104,min_ns=17083,max_ns=17146,avg_ms=0.017104,min_ms=0.017083,max_ms=0.017146
+CRYPT,ChaCha20-Poly1305,decrypt,io_mode=outofplace,horizon=1024,samples=30,avg_ns=17144,min_ns=17063,max_ns=17229,avg_ms=0.017144,min_ms=0.017063,max_ms=0.017229,verify=OK
+
+CRYPT,ChaCha20-Poly1305,encrypt,io_mode=outofplace,horizon=4096,samples=30,avg_ns=65255,min_ns=64979,max_ns=65937,avg_ms=0.065255,min_ms=0.064979,max_ms=0.065937
+CRYPT,ChaCha20-Poly1305,decrypt,io_mode=outofplace,horizon=4096,samples=30,avg_ns=65562,min_ns=64708,max_ns=79688,avg_ms=0.065562,min_ms=0.064708,max_ms=0.079688,verify=OK
+
+CRYPT,ChaCha20-Poly1305,encrypt,io_mode=outofplace,horizon=16384,samples=30,avg_ns=263685,min_ns=257062,max_ns=383500,avg_ms=0.263685,min_ms=0.257062,max_ms=0.383500
+CRYPT,ChaCha20-Poly1305,decrypt,io_mode=outofplace,horizon=16384,samples=30,avg_ns=259223,min_ns=253938,max_ns=311312,avg_ms=0.259224,min_ms=0.253938,max_ms=0.311312,verify=OK
+
+CRYPT,ChaCha20-Poly1305,encrypt,io_mode=outofplace,horizon=65536,samples=30,avg_ns=1042411,min_ns=1025542,max_ns=1063645,avg_ms=1.042412,min_ms=1.025542,max_ms=1.063645
+CRYPT,ChaCha20-Poly1305,decrypt,io_mode=outofplace,horizon=65536,samples=30,avg_ns=1037736,min_ns=1023000,max_ns=1079083,avg_ms=1.037736,min_ms=1.023000,max_ms=1.079083,verify=OK
+
+CRYPT,ChaCha20-Poly1305,encrypt,io_mode=outofplace,horizon=262144,samples=30,avg_ns=4206482,min_ns=4172042,max_ns=4241646,avg_ms=4.206482,min_ms=4.172042,max_ms=4.241646
+CRYPT,ChaCha20-Poly1305,decrypt,io_mode=outofplace,horizon=262144,samples=30,avg_ns=4155417,min_ns=4133166,max_ns=4194396,avg_ms=4.155417,min_ms=4.133166,max_ms=4.194396,verify=OK
+
+CRYPT,ChaCha20-Poly1305,encrypt,io_mode=outofplace,horizon=1048576,samples=30,avg_ns=16953721,min_ns=16852833,max_ns=17398667,avg_ms=16.953722,min_ms=16.852833,max_ms=17.398667
+CRYPT,ChaCha20-Poly1305,decrypt,io_mode=outofplace,horizon=1048576,samples=30,avg_ns=16828308,min_ns=16677708,max_ns=17008959,avg_ms=16.828308,min_ms=16.677708,max_ms=17.008959,verify=OK
+
+CRYPT ChaCha20-Poly1305 profiling finished
